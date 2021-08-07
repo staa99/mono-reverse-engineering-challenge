@@ -23,8 +23,8 @@ router.get('/:sessionId/transactions', async function(req, res, next) {
 
 router.get('/transfer', async function(req, res, next) {
   res.json({
-    status: 'success',
-    message: 'GTBank Internet Banking'
+    status: 'failure',
+    message: 'This endpoint has not been implemented yet'
   })
 })
 
