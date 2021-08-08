@@ -10,3 +10,5 @@ implemented.
 - No distributed cache is used for session management.
 
 - Session expiry detection is not implemented
+
+- No logging is done

@@ -21,11 +21,25 @@ router.get('/:sessionId/transactions', async function(req, res, next) {
   res.json(result)
 })
 
-router.get('/transfer', async function(req, res, next) {
-  res.json({
-    status: 'failure',
-    message: 'This endpoint has not been implemented yet'
-  })
+router.post('/:sessionId/transfer', async function(req, res, next) {
+  const { sessionId } = req.params
+  const { accountNumber, amount } = req.body
+  const result = await scraper.initiateTransfer(sessionId, accountNumber, amount)
+  res.json(result)
+})
+
+router.post('/:sessionId/otp-and-secret-answer', async function(req, res, next) {
+  const { sessionId } = req.params
+  const { otp, secretAnswer } = req.body
+  const result = await scraper.completeBeneficiaryCreation(sessionId, otp, secretAnswer)
+  res.json(result)
+})
+
+router.post('/:sessionId/otp', async function(req, res, next) {
+  const { sessionId } = req.params
+  const { otp } = req.body
+  const result = await scraper.completeTransfer(sessionId, otp)
+  res.json(result)
 })
 
 module.exports = router
