@@ -18,7 +18,7 @@ You can confirm by running `node -v`.
 
 Run `npm install` to install the dependencies.
 
-Run `npm run start` to start the application. You can then access it on http://localhost:<your port>.
+Run `npm run start` to start the application. You can then access it on `http://localhost:<your port>`.
 
 
 Thanks for checking it out.
